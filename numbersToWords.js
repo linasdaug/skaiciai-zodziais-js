@@ -118,6 +118,8 @@ if (sk == 0) {
 let skaicius = Math.abs(Math.floor(sk));
 let poKablelio = sk - skaicius; //jeigu nesveikas skaičius, trupmeninė dalis bus pridėta skaičiais
 
+console.log(poKablelio);
+
 trilijonai = Math.floor(skaicius / 1000000000000);
 milijardai = Math.floor(skaicius % 1000000000000 / 1000000000);
 milijonai = Math.floor(skaicius % 1000000000 / 1000000)
@@ -171,10 +173,17 @@ zodis = zodis + iki999(ikiTukst);
 zodis = zodis.replace("  ", " "); //kai kur galėjo likti dvigubi tarpai, padaryti viengubus
 zodis = zodis.charAt(0).toUpperCase() + zodis.substr(1);  //Pirma raidė didžioji
 
-if (poKablelio > 0) {
-  zodis = zodis + " " + Math.round(poKablelio * 100) + " ct.";  //dar pridedam trpmeninės dalies du skaičius po kablelio
+if (poKablelio > 0) {     //dar pridedam trupmeninės dalies du skaičius po kablelio
+  let du = Math.round(poKablelio * 100);
+  let duSk = du + "";
+  if (du >= 10 && du <= 19 || du % 10 == 0) {
+    zodis = zodis + " " + duSk + " šimtųjų";
+  } else if (du % 10 == 1) {
+    zodis = zodis + " " + duSk + " šimtoji";
+  } else {
+    zodis = zodis + " " + duSk + " šimtosios";
+  }
 }
-
 
 console.log(sk);
 console.log(zodis);
