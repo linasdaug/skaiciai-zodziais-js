@@ -128,7 +128,7 @@ ikiTukst = (skaicius % 1000);
 
 
 if (trilijonai > 0) {
-  if ((trilijonai % 100 >= 10) && (trilijonai % 100 <= 19)) {
+  if (((trilijonai % 100 >= 10) && (trilijonai % 100 <= 19)) ||(trilijonai % 10 == 0)) {
     zodis = zodis + iki999(trilijonai) + " trilijonų ";
   } else if (trilijonai % 10 == 1) {
     zodis = zodis + iki999(trilijonai) + " trilijonas ";
@@ -139,7 +139,7 @@ if (trilijonai > 0) {
 
 
 if (milijardai > 0) {
-  if ((milijardai % 100 >= 10) && (milijardai % 100 <= 19)) {
+  if (((milijardai % 100 >= 10) && (milijardai % 100 <= 19)) || (milijardai % 10 == 0)) {
     zodis = zodis + iki999(milijardai) + " milijardų ";
   } else if (milijardai % 10 == 1) {
     zodis = zodis + iki999(milijardai) + " milijardas ";
@@ -149,7 +149,7 @@ if (milijardai > 0) {
 }
 
 if (milijonai > 0) {
-  if ((milijonai % 100 >= 10) && (milijonai % 100 <= 19)) {
+  if (((milijonai % 100 >= 10) && (milijonai % 100 <= 19)) || (milijonai % 10 == 0)) {
     zodis = zodis + iki999(milijonai) + " milijonų ";
   } else if (milijonai % 10 == 1) {
     zodis = zodis + iki999(milijonai) + " milijonas ";
@@ -160,7 +160,7 @@ if (milijonai > 0) {
 
 
 if (tukstanciai > 0) {
-  if ((tukstanciai % 100 >= 10) && (tukstanciai % 100 <= 19)) {
+  if (((tukstanciai % 100 >= 10) && (tukstanciai % 100 <= 19)) || (tukstanciai % 10 == 0)) {
     zodis = zodis + iki999(tukstanciai) + " tūkstančių ";
   } else if (tukstanciai % 10 == 1) {
     zodis = zodis + iki999(tukstanciai) + " tūkstantis ";
